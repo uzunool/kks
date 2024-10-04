@@ -1,0 +1,121 @@
+Router1: 
+Gateway of last resort is not set
+
+     192.168.3.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.3.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.3.254/32 is directly connected, GigabitEthernet0/0/0
+     192.168.4.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.4.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.4.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.6.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.2/32 is directly connected, GigabitEthernet0/3/0
+
+Router0:
+Gateway of last resort is not set
+
+     192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.1.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.2.254/32 is directly connected, GigabitEthernet0/0/0
+     192.168.6.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.1/32 is directly connected, GigabitEthernet0/3/0
+
+Таблицы маршрутизации после добавления статических маршрутов:
+Router0:
+192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.1.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.2.254/32 is directly connected, GigabitEthernet0/0/0
+S    192.168.3.0/24 [1/0] via 192.168.6.2
+S    192.168.4.0/24 [1/0] via 192.168.6.2
+     192.168.6.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.1/32 is directly connected, GigabitEthernet0/3/0
+
+Router1:
+S    192.168.1.0/24 [1/0] via 192.168.6.5
+S    192.168.2.0/24 [1/0] via 192.168.6.5
+     192.168.3.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.3.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.3.254/32 is directly connected, GigabitEthernet0/0/0
+     192.168.4.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.4.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.4.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.6.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.2/32 is directly connected, GigabitEthernet0/3/0
+
+Router2:
+S    192.168.1.0/24 [1/0] via 192.168.6.1
+S    192.168.2.0/24 [1/0] via 192.168.6.1
+S    192.168.3.0/24 [1/0] via 192.168.6.6
+S    192.168.4.0/24 [1/0] via 192.168.6.6
+     192.168.6.0/24 is variably subnetted, 4 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/0
+L       192.168.6.2/32 is directly connected, GigabitEthernet0/0
+C       192.168.6.4/30 is directly connected, GigabitEthernet0/1
+L       192.168.6.5/32 is directly connected, GigabitEthernet0/1
+
+Таблица маршрутизации Router0 с маршрутом по умолчанию:
+ 192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.1.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.2.254/32 is directly connected, GigabitEthernet0/0/0
+S    192.168.3.0/24 [1/0] via 192.168.6.2
+S    192.168.4.0/24 [1/0] via 192.168.6.2
+     192.168.5.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.5.0/25 is directly connected, GigabitEthernet0/1
+L       192.168.5.126/32 is directly connected, GigabitEthernet0/1
+     192.168.6.0/24 is variably subnetted, 4 subnets, 2 masks
+C       192.168.6.0/30 is directly connected, GigabitEthernet0/0
+L       192.168.6.1/32 is directly connected, GigabitEthernet0/0
+C       192.168.6.8/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.9/32 is directly connected, GigabitEthernet0/3/0
+S*   0.0.0.0/0 [1/0] via 192.168.6.10
+
+Самостоятельная работа:
+Router1:
+S    192.168.1.0/24 [1/0] via 192.168.6.5
+                    [1/0] via 192.168.16.2
+     192.168.3.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.3.0/24 is directly connected, GigabitEthernet0/0/0
+L       192.168.3.254/32 is directly connected, GigabitEthernet0/0/0
+     192.168.4.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.4.0/24 is directly connected, GigabitEthernet0/1/0
+L       192.168.4.254/32 is directly connected, GigabitEthernet0/1/0
+     192.168.5.0/26 is subnetted, 2 subnets
+S       192.168.5.128/26 [1/0] via 192.168.16.2
+S       192.168.5.192/26 [1/0] via 192.168.6.5
+     192.168.6.0/24 is variably subnetted, 5 subnets, 3 masks
+C       192.168.6.4/30 is directly connected, GigabitEthernet0/1
+L       192.168.6.6/32 is directly connected, GigabitEthernet0/1
+C       192.168.6.8/30 is directly connected, GigabitEthernet0/3/0
+L       192.168.6.10/32 is directly connected, GigabitEthernet0/3/0
+S       192.168.6.64/27 [1/0] via 192.168.6.9
+                        [1/0] via 192.168.16.2
+     192.168.16.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.16.0/30 is directly connected, GigabitEthernet0/2
+L       192.168.16.1/32 is directly connected, GigabitEthernet0/2
+S    192.168.15.0/24 [1/0] via 192.168.16.2
+                     [1/0] via 192.168.6.9
+S*   0.0.0.0/0 [1/0] via 192.168.6.9
+
+Route5:
+192.168.5.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.5.192/26 is directly connected, GigabitEthernet0/1
+L       192.168.5.254/32 is directly connected, GigabitEthernet0/1
+     192.168.6.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.6.64/27 is directly connected, GigabitEthernet0/0
+L       192.168.6.94/32 is directly connected, GigabitEthernet0/0
+     192.168.16.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.16.0/30 is directly connected, GigabitEthernet0/2
+L       192.168.16.2/32 is directly connected, GigabitEthernet0/2
+S*   0.0.0.0/0 [1/0] via 192.168.16.1
